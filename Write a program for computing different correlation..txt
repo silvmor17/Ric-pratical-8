@@ -1,0 +1,44 @@
+Write a program for computing different correlation.
+Positive Correlation:
+Let’s take a look at a positive correlation. Numpy implements a corrcoef() function that
+returns a matrix of correlations of x with x, x with y, y with x and y with y. We’re
+interested in the values of correlation of x with y (so position (1, 0) or (0, 1)).
+Code:
+importnumpy as np
+importmatplotlib.pyplot as plt
+np.random.seed(1)
+# 1000 random integers between 0 and 50
+x = np.random.randint(0, 50, 1000)
+# Positive Correlation with some noise
+y = x + np.random.normal(0, 10, 1000)
+np.corrcoef(x, y)
+matplotlib.style.use('ggplot')
+plt.scatter(x, y)
+plt.show()
+Output:1
+
+Negative Correlation:
+importnumpy as np
+importmatplotlib.pyplot as plt
+np.random.seed(1)
+# 1000 random integers between 0 and 50
+PSIT1P1~~~~~ Research in Computing Practical
+M. Sc. [Information Technology] SEMESTER ~ I Teacher’s Reference Manual
+51
+x = np.random.randint(0, 50, 1000)
+# Negative Correlation with some noise
+y = 100 - x + np.random.normal(0, 5, 1000)
+np.corrcoef(x, y)
+plt.scatter(x, y)
+plt.show()
+Output:2
+No/Weak Correlation:
+importnumpy as np
+importmatplotlib.pyplot as plt
+np.random.seed(1)
+x = np.random.randint(0, 50, 1000)
+y = np.random.randint(0, 50, 1000)
+np.corrcoef(x, y)
+plt.scatter(x, y)
+plt.show()
+Output:3
